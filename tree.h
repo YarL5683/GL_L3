@@ -6,10 +6,19 @@
 #define GL_L3_TREE_H
 
 class Tree{
+    public:
+    struct node{
+        int data;
+        node *left;
+        node * right;};
+
     Tree();
-    Add();
-    Out();
+    void Add(node* &, int);
+    void Out(node* );
+    void Clear(node* &);
+
     ~Tree();
+    node *root;
 };
 
 #endif //GL_L3_TREE_H
