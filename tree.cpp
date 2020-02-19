@@ -1,17 +1,16 @@
-//
-// Created by admin on 19.02.2020.
-//
-
 #include "tree.h"
 #include <iostream>
 
 Tree::Tree()
 {
     root = nullptr;
-    //While input != 0 -> add new leaf
+    std::cout << "> ";
+
+    //While input != 0 -> read and add new leaf
     while(1==1)
     {
         int input_data;
+
         std::cin >> input_data;
 
         if(input_data != 0)
@@ -19,8 +18,8 @@ Tree::Tree()
         else
             break;
     }
-
-    Out(root);
+    //Print Tree
+    Print(root);
 }
 
 void Tree::Add(node*& leaf, int input)
@@ -41,18 +40,18 @@ void Tree::Add(node*& leaf, int input)
     }
 }
 
-void Tree::Out(node *leaf)
+void Tree::Print(node *leaf)
 {
     if(leaf->left != nullptr)
-        Out(leaf->left);
+        Print(leaf->left);
 
     std::cout << leaf->data << " ";
 
     if(leaf->right != nullptr)
-        Out(leaf->right);
+        Print(leaf->right);
 }
 
-//Recursive descent on a tree. Delete items from leaf to root
+//Recursive descent on a tree. Delete nodes from leaf to root
 void Tree::Clear(node* &a)
 {
     if(a->left != nullptr)

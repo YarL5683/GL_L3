@@ -1,13 +1,17 @@
-cmake_minimum_required(VERSION 3.0) #Check Cmake version
-set(CMAKE_CXX_STANDARD 11) #Set C++ version
+#Check Cmake version
+cmake_minimum_required(VERSION 3.0)
 
-project(GL_L3) # Project name
+#Set C++ version
+set(CMAKE_CXX_STANDARD 11)
 
-#Set variable
+# Project name
+project(GL_L3)
+
+# Set variable
 set(SOURCE_EXE main.cpp)
 set(SOURCE_LIB tree.cpp)
 
-#Add executable file & library
+# Add executable file & library
 add_executable(main ${SOURCE_EXE})
 add_library(tree STATIC ${SOURCE_LIB})
 
